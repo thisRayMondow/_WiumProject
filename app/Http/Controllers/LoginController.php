@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('/auth/login');
+        return view('index');
     }
 
     public function login(Request $request)
@@ -24,7 +24,7 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('loginError', 'Login tidak berhasil!');
+        return back()->with('loginError', 'Email/Password Salah!');
     }
 
     public function logout(Request $request)
