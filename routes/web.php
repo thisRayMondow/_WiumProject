@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Dashboard\dashboard;
+use App\Http\Controllers\Dashboard\departement;
+use App\Http\Controllers\Dashboard\pengguna;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 /*
@@ -23,4 +25,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 // Route::get('/dashboard', [dashboard::class, 'index'])->middleware('auth');
 Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('', [dashboard::class, 'index']);
+    Route::get('/ADDUSER', [pengguna::class, 'index']);
+    Route::get('/DEPT', [departement::class, 'index']);
 });

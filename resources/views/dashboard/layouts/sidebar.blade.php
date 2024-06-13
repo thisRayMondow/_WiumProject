@@ -16,8 +16,8 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/dashboard">
-        <span class="menu-title">Dashboard</span>
+      <a class="nav-link active" href="/dashboard">
+        <span class="menu-title">Beranda</span>
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
@@ -37,9 +37,9 @@
         </ul>
       </div>
     </li>
-    @endcan
+    @endcan --}}
 
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link" href="/dashboard/antrian">
         <span class="menu-title">Antrian</span>
         <i class="mdi mdi-ticket-account menu-icon"></i>
@@ -51,16 +51,25 @@
         <span class="menu-title">Plasma Antrian</span>
         <i class="mdi mdi-ticket-account menu-icon"></i>
       </a>
-    </li>
+    </li> --}}
 
+    @if (auth()->user()->is_admin == true)
     <li class="nav-item">
-      <a class="nav-link" href="/dashboard/pendaftaran">
-        <span class="menu-title">Pendaftaran</span>
-        <i class="mdi mdi-account menu-icon"></i>
+      <a class="nav-link" href="/dashboard/DEPT">
+        <span class="menu-title">Departement</span>
+        <i class="mdi mdi-home-city-outline menu-icon"></i>
       </a>
     </li>
 
-    @can('is_admin')
+    <li class="nav-item">
+      <a class="nav-link" href="/dashboard/ADDUSER">
+        <span class="menu-title">Pengguna</span>
+        <i class="mdi mdi-account menu-icon"></i>
+      </a>
+    </li>
+    @endif
+
+    {{-- @can('is_admin')
     <li class="nav-item">
       <a class="nav-link" href="/dashboard/laporan">
         <span class="menu-title">Laporan </span>
