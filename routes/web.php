@@ -20,4 +20,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
-Route::get('/dashboard', [dashboard::class, 'index'])->middleware('auth');
+// Route::get('/dashboard', [dashboard::class, 'index'])->middleware('auth');
+Route::prefix('dashboard')->middleware('auth')->group(function () {
+    Route::get('', [dashboard::class, 'index']);
+});

@@ -37,7 +37,7 @@ return new class extends Migration
             'created_at' => now(),
             'updated_at' => now(),
             'is_admin' => true,
-            'dept_id' => 0,
+            'dept_id' => 1,
         ]);
     }
 
