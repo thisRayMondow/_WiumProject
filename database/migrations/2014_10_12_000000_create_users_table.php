@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -21,7 +23,22 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->boolean('is_admin')->default(false);
+            $table->integer("dept_id");
         });
+
+        // Masukkan data default
+        DB::table('users')->insert([
+            'name' => 'ADMIN',
+            'username' => 'ADMIN',
+            'email' => 'admin@mail.com',
+            'email_verified_at' => now(),
+            'password' => '$2y$10$SzqqhbsxjG2/vIh6Of9TduHHpJ653U8jTn2p5Ji06lWTfGiCJQzBW',
+            'remember_token' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'is_admin' => true,
+            'dept_id' => 0,
+        ]);
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\dashboard;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 /*
@@ -19,11 +20,4 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index', [
-        // 'pasien' => RegPasien::all(),
-        // 'dokter' => Dokter::all(),
-        // 'antrian' => Antrian::whereRaw('day(created_at) = ' . date('d') . ' and month(created_at) = ' . date('m') . ' and year(created_at) = ' . date('Y'))
-        // ->where('status', 0)->get()
-    ]);
-})->middleware('auth');
+Route::get('/dashboard', [dashboard::class, 'index'])->middleware('auth');

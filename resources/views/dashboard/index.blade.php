@@ -35,11 +35,10 @@
       <div class="col-md-4 stretch-card grid-margin">
         <div class="card bg-gradient-success card-img-holder text-white">
           <div class="card-body">
-            <img src="/vendors/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-            <h4 class="font-weight-normal mb-3"> Jumlah Keluarga <i class="mdi mdi mdi-account-multiple mdi-24px float-right"></i>
+            <h4 class="font-weight-normal mb-3"> Departement <i class="mdi mdi mdi-account-multiple mdi-24px float-right"></i>
             </h4>
-            <h2 class="mb-5">10 Kelompok</h2>
-            <h6 class="card-text text-end">Keluarga</h6>
+            <h2 class="mb-5">{{ count($dept) }} Departement</h2>
+            <h6 class="card-text text-end"><button class="btn btn-sm border border-info">Lihat</button></h6>
           </div>
         </div>
       </div>

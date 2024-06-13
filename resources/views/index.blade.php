@@ -37,7 +37,7 @@
                 </div>
                 @enderror
                 </div>
-                <p class="small"><a class="text-primary" href="forget-password.html">Forgot password?</a></p>
+                <p class="small"><a class="text-primary" href="/">Forgot password?</a></p>
                 <div class="d-grid">
                     <button class="btn btn-primary" type="submit">Login</button>
                 </div>
