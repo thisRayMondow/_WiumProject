@@ -38,10 +38,13 @@
         <h4 class="font-weight-normal mb-3"><i class="mdi mdi-home-city-outline mdi-24px float-right"></i> Departement
         </h4>
         <h2 class="mb-5">{{ count($dept) }} Departement</h2>
-        <h6 class="card-text text-end"><button class="btn btn-sm border border-info">Lihat</button></h6>
+        <h6 class="card-text text-end"><button class="btn btn-sm border border-info" data-bs-toggle="modal"
+            data-bs-target="#deptModal">Lihat</button></h6>
       </div>
     </div>
   </div>
 </div>
+
+@livewire('dept-modal')
 
 @endsection
