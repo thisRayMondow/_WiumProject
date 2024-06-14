@@ -23,7 +23,7 @@ Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 // Route::get('/dashboard', [dashboard::class, 'index'])->middleware('auth');
-Route::prefix('dashboard')->middleware('auth')->group(function () {
+Route::prefix('home')->middleware('auth')->group(function () {
     Route::get('', [dashboard::class, 'index']);
     Route::get('/ADDUSER', [pengguna::class, 'index']);
     Route::get('/DEPT', [departement::class, 'index']);

@@ -16,7 +16,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="/dashboard">
+      <a class="nav-link active" href="/home">
         <span class="menu-title">Beranda</span>
         <i class="mdi mdi-home menu-icon"></i>
       </a>
@@ -55,14 +55,14 @@
 
     @if (auth()->user()->is_admin == true)
     <li class="nav-item">
-      <a class="nav-link" href="/dashboard/DEPT">
+      <a class="nav-link" href="/home/DEPT">
         <span class="menu-title">Departement</span>
         <i class="mdi mdi-home-city-outline menu-icon"></i>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/dashboard/ADDUSER">
+      <a class="nav-link" href="/home/ADDUSER">
         <span class="menu-title">Pengguna</span>
         <i class="mdi mdi-account menu-icon"></i>
       </a>
