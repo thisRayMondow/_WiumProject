@@ -9,7 +9,7 @@
         </div>
         <div class="nav-profile-text d-flex flex-column pt-3">
           <span class="font-weight-bold mb-2">{{ auth()->user()->name }}</span>
-          <span class="text-secondary text-small">{{ auth()->user()->is_admin == 0 ? 'Karyawan' : 'Administrator'
+          <span class="text-secondary text-small">{{ auth()->user()->is_admin == 0 ? 'User Admin' : 'General Admin'
             }}</span>
         </div>
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
@@ -69,14 +69,26 @@
     </li>
     @endif
 
-    {{-- @can('is_admin')
     <li class="nav-item">
-      <a class="nav-link" href="/dashboard/laporan">
-        <span class="menu-title">Laporan </span>
-        <i class="mdi mdi-book menu-icon"></i>
+      <a class="nav-link" href="/home/WORKER">
+        <span class="menu-title">Pekerja Mission</span>
+        <i class="mdi mdi-account-tie menu-icon"></i>
       </a>
     </li>
-    @endcan --}}
+
+    <li class="nav-item">
+      <a class="nav-link" href="/home/PEOPLE">
+        <span class="menu-title">Anggota Jemaat</span>
+        <i class="mdi mdi-account-group menu-icon"></i>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/home/LogActivity">
+        <span class="menu-title">Log Aktifitas</span>
+        <i class="mdi mdi-format-list-bulleted-square menu-icon"></i>
+      </a>
+    </li>
 
   </ul>
 </nav>
